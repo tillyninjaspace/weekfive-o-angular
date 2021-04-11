@@ -1,5 +1,8 @@
 # Weekfive
 
+Developer: Tilly Wright
+See my portfolio: https://gracious-mcnulty-e733ac.netlify.app/portfolio.html
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
 ## Development server
