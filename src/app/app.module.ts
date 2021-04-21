@@ -7,6 +7,7 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 
@@ -15,7 +16,8 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
     AppComponent,
     ZippyComponent,
     ContactFormComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
