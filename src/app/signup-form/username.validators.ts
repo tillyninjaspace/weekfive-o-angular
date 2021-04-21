@@ -7,4 +7,16 @@ export class UsernameValidators {
 
         return null;
     }
+
+    //async validator example
+    static shouldBeUnique(control: AbstractControl) : Promise<ValidationErrors | null> {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (control.value === 'tilly')
+                    resolve({shouldBeUnique: true});
+                else 
+                    resolve(null);
+            }, 2000);    
+        });
+    }    
 }
