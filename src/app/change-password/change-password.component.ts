@@ -16,5 +16,7 @@ export class ChangePasswordComponent {
       confirmPassword: ['', Validators.required],
     })
   }
- 
+  get oldPassword() {return this.form.get('oldPassword'); }
+  get newPassword() {return this.form.get('newPassword'); }
+  get confirmPassword() {return this.form.get('confirmPassword'); }
 }
