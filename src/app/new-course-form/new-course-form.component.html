@@ -1,6 +1,6 @@
 <hr>
-
-<form #f="ngForm" (ngSubmit)="submit(f.value)">  
+<!-- Original -->
+<!-- <form #f="ngForm" (ngSubmit)="submit(f.value)">  
     <div class="form-group">
         <label for="name">Course Name</label>
         <input required minlength="3" ngModel name="name" #name="ngModel" type="text" id="name" class="form-control">
@@ -30,4 +30,23 @@
 
     </p>
     <button [disabled]="f.invalid" >Create</button>
+</form> -->
+<!-- End of Original -->
+
+<form>
+    <label>Form Array</label>
+    <input 
+    type="text" class="form-control"
+    (keyup.enter)="addTopic(topic)" #topic
+    >
+    <ul class="list-group">
+        <li 
+        *ngFor="let topic of topics.controls"
+        (click)="removeTopic(topic)"
+        class="list-group item">
+        {{topic.value}}
+      
+        </li>
+    </ul>
 </form>
+
