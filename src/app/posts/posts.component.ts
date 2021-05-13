@@ -28,7 +28,14 @@ export class PostsComponent {
       .subscribe(response => {
         this.posts.splice(0,0, post)
         console.log(response)
-      })
+      });
+  }
+
+  updatePost(post: any) {
+    this.http.patch(this.url + '/' + post.id, JSON.stringify({isRead: true}))
+    .subscribe(response => {
+      console.log(response)
+    })
   }
 
   ngOnInit(): void {
