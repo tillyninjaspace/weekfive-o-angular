@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent {
-
+  posts: any = [];
+ 
   constructor(http: HttpClient) { 
+   
     http.get('http://jsonplaceholder.typicode.com/posts')
     .subscribe(response => {
       console.log(response);
+      this.posts = response;
     });
   }
 
