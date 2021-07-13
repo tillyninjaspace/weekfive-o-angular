@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule }  from '@angular/common/http';
 
@@ -12,6 +12,7 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostsComponent } from './posts/posts.component';
+import { AppErrorHandler } from './common/app-error-handler';
 
 
 
@@ -33,6 +34,7 @@ import { PostsComponent } from './posts/posts.component';
     HttpClientModule,
   ],
   providers: [
+    {provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
