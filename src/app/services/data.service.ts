@@ -6,40 +6,29 @@ import {catchError} from 'rxjs/operators';
 import { AppError } from '../common/app-error';
 import { NotFoundError } from '../common/not-found-error';
 import { BadInput } from '../common/bad-input';
-// import { DataServe } from './data.service';
 
 @Injectable({
   providedIn: 'root'
 })
-// export class PostService extends DataServe {
-//   // private url = 'http://jsonplaceholder.typicode.com/posts'
+export class DataServe {
 
-//   constructor(http: HttpClient) {
-//     super(http);
-//    }
-// }
-
-
-export class PostService {
-  private url = 'http://jsonplaceholder.typicode.com/posts'
-
-  constructor(private http: HttpClient) { }
-  getPost() {
+  constructor(private url: string, private http: HttpClient) { }
+  getAll() {
     return this.http.get(this.url)
     .pipe(catchError(this.handleError));
   }
 
-  createPost(post: any) {
-    return this.http.post(this.url, JSON.stringify(post))
+  create(resource: any) {
+    return this.http.post(this.url, JSON.stringify(resource))
     .pipe(catchError(this.handleError));
   }
 
-  updatePost(post: any) {
-    return this.http.patch(this.url + '/' + post.id, JSON.stringify({isRead: true}))
+  update(resource: any) {
+    return this.http.patch(this.url + '/' + resource.id, JSON.stringify({isRead: true}))
     .pipe(catchError(this.handleError));
   }
 
-  deletePost(id: number) {
+  delete(id: number) {
     return this.http.delete(this.url + '/' + id)
     .pipe(catchError(this.handleError));
   }

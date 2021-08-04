@@ -27,14 +27,18 @@ export class PostsComponent {
   }
 
   createPost(input: HTMLInputElement) {
-    let post: any = {title: input.value}
+    let post: any = {title: input.value};
+    this.posts.splice(0,0, post);
+    
     input.value = '';
 
     this.service.createPost(post)
-    .subscribe(response => {
-      this.posts.splice(0,0, post)
-      console.log(response)
+    .subscribe(newPost => {
+      console.log(newPost)
+      // post['id'] = newPost.id;
     }, (error: AppError) => {
+      this.posts.splice(0, 1);
+
       if (error instanceof BadInput) {
         // this.form.setErrors(error.originalError);
       }

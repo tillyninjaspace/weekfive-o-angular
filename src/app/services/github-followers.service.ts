@@ -6,22 +6,13 @@ import {catchError} from 'rxjs/operators';
 import { AppError } from '../common/app-error';
 import { NotFoundError } from '../common/not-found-error';
 import { BadInput } from '../common/bad-input';
-// import { DataServe } from './data.service';
 
 @Injectable({
   providedIn: 'root'
 })
-// export class PostService extends DataServe {
-//   // private url = 'http://jsonplaceholder.typicode.com/posts'
 
-//   constructor(http: HttpClient) {
-//     super(http);
-//    }
-// }
-
-
-export class PostService {
-  private url = 'http://jsonplaceholder.typicode.com/posts'
+export class GithubFollowersService {
+  private url = 'https://api.github.com/users/tillyninjaspace/followers'
 
   constructor(private http: HttpClient) { }
   getPost() {
